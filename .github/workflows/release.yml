@@ -1,0 +1,36 @@
+name: Release datapack
+
+on:
+  release:
+    # `published` fires for both stable and pre-releases converted from drafts.
+    # `created` is excluded: it never fires for drafts, and would double-run here.
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  zip:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build zip
+        env:
+          TAG: ${{ github.event.release.tag_name }}
+        run: |
+          set -euo pipefail
+          mkdir -p "dist/$TAG"
+          cp pack.mcmeta "dist/$TAG/"
+          cp -r data "dist/$TAG/"
+          cd dist
+          zip -r "$TAG.zip" "$TAG" -x '*.DS_Store'
+          ls -l "$TAG.zip"
+
+      - name: Upload to release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ github.event.release.tag_name }}
+        run: |
+          set -euo pipefail
+          gh release upload "$TAG" "dist/$TAG.zip" --clobber
