@@ -24,8 +24,8 @@ jobs:
           cp pack.mcmeta "dist/$TAG/"
           cp -r data "dist/$TAG/"
           cd dist
-          zip -r "$TAG.zip" "$TAG" -x '*.DS_Store'
-          ls -l "$TAG.zip"
+          zip -r "BTF-$TAG.zip" "$TAG" -x '*.DS_Store'
+          ls -l "BTF-$TAG.zip"
 
       - name: Upload to release
         env:
@@ -33,4 +33,4 @@ jobs:
           TAG: ${{ github.event.release.tag_name }}
         run: |
           set -euo pipefail
-          gh release upload "$TAG" "dist/$TAG.zip" --clobber
+          gh release upload "$TAG" "dist/BTF-$TAG.zip" --clobber
