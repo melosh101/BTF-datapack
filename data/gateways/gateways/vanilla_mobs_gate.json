@@ -1,0 +1,103 @@
+{
+  "size": "medium",
+  "color": "#46b827",
+  "leash_range": "100",
+  "waves": [
+    {
+      "entities": [
+        {
+          "entity": "minecraft:cow",
+          "count": 10
+        }
+      ],
+      "modifiers": [],
+      "rewards": [
+        {
+          "type": "entity_loot",
+          "entity": "minecraft:cow",
+          "rolls": 5
+        }
+      ],
+      "max_wave_time": 1200,
+      "setup_time": 200
+    },
+    {
+      "entities": [
+        {
+          "entity": "minecraft:pig",
+          "count": 10
+        }
+      ],
+      "modifiers": [],
+      "rewards": [
+        {
+          "type": "entity_loot",
+          "entity": "minecraft:pig",
+          "rolls": 5
+        }
+      ],
+      "max_wave_time": 1200,
+      "setup_time": 200
+    },
+    {
+      "entities": [
+        {
+          "entity": "minecraft:sheep",
+          "count": 10
+        }
+      ],
+      "modifiers": [],
+      "rewards": [
+        {
+          "type": "entity_loot",
+          "entity": "minecraft:sheep",
+          "rolls": 5
+        }
+      ],
+      "max_wave_time": 1200,
+      "setup_time": 200
+    },
+    {
+      "entities": [
+        {
+          "entity": "minecraft:chicken",
+          "count": 10
+        }
+      ],
+      "modifiers": [],
+      "rewards": [
+        {
+          "type": "entity_loot",
+          "entity": "minecraft:chicken",
+          "rolls": 5
+        }
+      ],
+      "max_wave_time": 1200,
+      "setup_time": 200
+    }
+  ],
+  "rewards": [
+    {
+      "type": "entity_loot",
+      "entity": "minecraft:cow",
+      "rolls": 10
+    },
+    {
+      "type": "entity_loot",
+      "entity": "minecraft:pig",
+      "rolls": 10
+    },
+    {
+      "type": "entity_loot",
+      "entity": "minecraft:sheep",
+      "rolls": 10
+    },
+    {
+      "type": "entity_loot",
+      "entity": "minecraft:chicken",
+      "rolls": 10
+    }
+  ],
+  "completion_xp": 100,
+  "spawn_range": 10
+}
